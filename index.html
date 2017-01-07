@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Basal Metabolic Rate Calculator</title>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angularApp.js"></script>
+<link rel="stylesheet" href="css/angularApp.css" type="text/css">
+</head>
+
+<body ng-app="BMRCalc">
+	<header>
+		<div>
+			<h1>Basal Metabolic Rate Calculator</h1>
+			<h3>Basal metabolic rate (BMR) is the amount of energy expended while at rest in a neutrally temperate environment. 
+				Find out your BMR with this handy calculator!</h3>
+		</div>
+	</header>
+	<form ng-submit="submit()" ng-controller="BmrController">
+		<div class="container">
+			<div class="innerContainer">
+				<span class="labelContainer">
+					<label>Gender</label>
+				</span>
+				<span class="selectContainer">
+					<select ng-model="gender" value="">
+						<option>Male</option>
+						<option>Female</option>
+					</select>
+				</span>
+			</div>
+			<div>
+				<span class="labelContainer">
+					<label>Weight</label>
+				</span>
+				<span class="textContainer1">
+					<input type="text" name="weight" ng-model="weight" value="" required>
+					&nbsp;kilogram
+				</span>
+			</div>
+			<div>
+				<span class="labelContainer">
+					<label>Height</label>
+				</span>
+				<span class="textContainer2">
+					<input type="text" name="height" ng-model="height" value="" required>  
+					&nbsp;centimeter
+				</span>
+			</div>
+			<div>
+				<span class="labelContainer">
+					<label>Age</label>
+				</span>
+				<span class="textContainer3">
+					<input type="text" name="age" ng-model="age" value="" required> 
+					&nbsp;year
+				</span>
+			</div>
+			<div>
+				<button type="submit">Calculate</button>
+			</div>
+			<div class="resultContainer">
+				<label>
+					{{gender}} Basal Metabolic Rate (BMR):&nbsp;
+					<input type="text" name="result" ng-model="result" class="textResult" disabled>&nbsp;calorie/day
+				</label>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
